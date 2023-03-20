@@ -1,3 +1,7 @@
+from ai import AI
+from player import Player
+from human import Human
+
 class Game:
     # def __init__(self):
     #     self.
@@ -28,17 +32,15 @@ class Game:
     Rock crushes Scissors""")
         from time import sleep
 
-    def play_mode (self):
+    def play_game (self):
         while self.player_one.player_score <2 and self.player_two.player_score <2:
             self.player_one.chosen_move()
             self.player_two.chosen_move ()
             self.compare_moves()
             self.display_winner()
 
-        while self.play_mode:
-            self.player_one.player_score <2 and ai.player <2:
-            self.compare_moves()
-            self.display_winner()
+                #     self.compare_moves()
+        #     self.display_winner()
     
     def play_game (self):
         
@@ -48,10 +50,27 @@ class Game:
         print (f"{self.winner} wins the set!")
         
     
+
         # loop back to start if selection is anything other than 0-4
 
-    #  write input for player(s),
 
+    def play_mode (self):
+        print ("How many players? Press 1 or 2")
+        self.play_mode = input ("")
+
+        if self.play_mode == "1":
+            print ("You will play against Roboticus Maximus")
+            self.player_one = Human ()
+            self.player_two = AI("Roboticus Maximus")
+        
+        if self.play_mode =="2":
+            print ("You have chosen to play another person")
+            self.player_one = Human()
+            self.player_two = Human()
+        
+        else:
+            print ("That is not a valid selection. Please choose 1 or 2.")
+            self.play_mode
 
 # write loop to return to top if 0-4 selection not made. make sure that this is for human player ONLY
 # Three wins determine a winner of that match
