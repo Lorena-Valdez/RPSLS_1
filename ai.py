@@ -1,20 +1,18 @@
 from player import Player
 import random
 from time import sleep
-class AI(Player):
 
-    def __init__(self,name):
+class AI(Player):
+    def __init__(self):
         super().__init__()
         self.score = 0
-        self.name = name
+        self.name = "Roboticus Maximus"
 
     def choose_move (self):
-        self.chosen_move = str(random.rantint (0,4))
-        move_list = ["Rock","Paper", "Scissors","Lizard","Spock"]
+        self.chosen_move = random.choice(self.gestures)
         sleep (1)
-        print (f"{self.name} has picked {move_list[int(self.chosen_move)]}")
+        print (f"Roboticus Maximus has picked (self.chosen_move)")
 
-# CHILD CLASS
 
-# wmust have things in common from parent  class
+# must have things in common from parent  class
 # self.random_choice = random_choice only in ai class
