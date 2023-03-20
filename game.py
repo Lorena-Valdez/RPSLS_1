@@ -5,12 +5,13 @@ class Game:
     def run_game (self):
         self.display_title ()
         self.game_rules()
-        self.display_winner()
         self.play_mode ()
+        self.play_game ()
+        self.display_winner()
 
     def display_title (self):
         print("\nWelcome to Rock, Paper, Scissors, Lizard, Spock \n")
-        
+        from time import sleep
     
     def game_rules (self):
         print ("""    The rules are simple:\n
@@ -25,30 +26,33 @@ class Game:
     Spock vaporizes Rock \n
     and of course, \n
     Rock crushes Scissors""")
-
+        from time import sleep
 
     def play_mode (self):
-        print ("Play against a person or AI? 1 for Person or 2 for AI")
-        self.input =()  
-        if self.play_mode == "1":
-            self.use_ai = False
-        if self.play_mode == "2":
-            self.use_ai = True   
+        while self.player_one.player_score <2 and self.player_two.player_score <2:
+            self.player_one.chosen_move()
+            self.player_two.chosen_move ()
+            self.compare_moves()
+            self.display_winner()
+
+        while self.play_mode:
+            self.player_one.player_score <2 and ai.player <2:
+            self.compare_moves()
+            self.display_winner()
+    
+    def play_game (self):
+        
+    
 
     def display_winner (self):
         print (f"{self.winner} wins the set!")
         
     
         # loop back to start if selection is anything other than 0-4
-    
 
-# write input for player(s),
+    #  write input for player(s),
+
+
 # write loop to return to top if 0-4 selection not made. make sure that this is for human player ONLY
-# write what each number means when selected. i.e You choose 1 "paper", 
-# parent class, name, score, gesture list, and currently selected gesture.
-# ai is diff by HOW they pick gestures
-# human choose gesture and access gesture in game.py then we can have access to player moves and to compare the two. 
 # Three wins determine a winner of that match
 # Declare winner
-
-# GITBASH then work on above
