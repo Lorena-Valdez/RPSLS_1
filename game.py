@@ -39,17 +39,54 @@ class Game:
             self.compare_moves()
             self.display_winner()
 
-                #     self.compare_moves()
+        #     self.compare_moves()
+    def compare_moves (self):
+        if self.player_one.chosen_move == self.player_two.chosen_move:
+                print (f"You both chose {self.player_one.chosen_move}. Try again!")
+
+        elif self.player_one.chosen_move == self.player_one.gestures[0] and (self.player_two.chosen_move == self.player_two.gestures[2] or self.player_two.chosen_move == self.player_two.gestures[3]):
+            self.player_one.score += 1
+        print (f"{self.player_one.chosen_move}{self.player_one.name} gets the point!")
+        print(f"{self.player_one.name}'s move of {self.player_one.chosen_move} beat {self.player_two.name}'s {self.player_two.chosen_move}!")
+
+
+
+
+        # if  self.player_one.chosen_move == 0:
+        #     if self.player_two.chosen_move == 1:
+        #         print ("Paper Covers Rock! {self.player_two.name} wins!")
+
+        # if  self.player_one.chosen_move == 0:
+        #     if self.player_two.chosen_move == 2:
+        #         print ("Rock crushes Scissors. {self.player_one.name} wins!")
+
+        # if  self.player_one.chosen_move == 0:
+        #     if self.player_two.chosen_move == 3:
+        #         print ("Rock crushes Lizard. {self.player_one.name} wins!")
+
+        # if  self.player_one.chosen_move == 0:
+        #     if self.player_two.chosen_move == 4:
+        #         print ("Spock vaporizes Rock. {self.player_two.name} wins!")
+
+        # if  self.player_one.chosen_move == 1:
+        #     if self.player_two.chosen_move == 0:
+        #         print ("Paper Covers Rock! {self.player_one.name} wins!") 
+
+        # if  self.player_one.chosen_move == 1:
+        #     if self.player_two.chosen_move == 2:
+        #         print ("Paper Covers Rock! {self.player_one.name} wins!")        
         #     self.display_winner()
     
     def play_game (self):
-        
+        self.display_title
+        self.game_rules
+
     
 
-    def display_winner (self):
-        print (f"{self.winner} wins the set!")
+        def display_winner (self):
+            print (f"{self.winner} wins the set!")
         
-    
+    # if 
 
         # loop back to start if selection is anything other than 0-4
 
@@ -70,7 +107,8 @@ class Game:
         
         else:
             print ("That is not a valid selection. Please choose 1 or 2.")
-            self.play_mode
+            self.play_mode ()
+
 
 # write loop to return to top if 0-4 selection not made. make sure that this is for human player ONLY
 # Three wins determine a winner of that match
