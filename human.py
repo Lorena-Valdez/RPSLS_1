@@ -1,29 +1,20 @@
 from player import Player
+
 import random
 from time import sleep
-class Human(Player):
 
-    def __init__(self,name):
-        super().__init__()
-        self.name = name
+class Human(Player):
+    def __init__(self):
+        super().__init__(input ("Please Enter Name "))
+
 
     def choose_move (self):
-        gesture_list = ["Rock","Paper","Scissors","Lizard","Spock"]
-        sleep (1)
-        print (f"{self.name} has picked {gesture_list[int(self.chosen_gesture)]}")
 
-    def choose_move (number):
-        if number == 0:
-            return "Rock"
-        elif number == 1:
-            return "Paper"
-        elif number == 2:
-            return "Scissors"
-        elif number == 3:
-            return "Lizard"
-        elif number == 4:
-            return "Spock"
-        else:
-            return "Try again"
+        print ("Choose (0) for Rock, (1) for Paper, (2) for Scissors, (3) for Lizard and (4) for Spock")
+       
+        # user_input = int (input ("Choose your move!"))
+        user_input = int (input (f"{self.name} choose your move!"))
+        self.chosen_move = self.gestures[user_input]
+        print (f"{self.name} has picked {self.chosen_move}")
+
         
-        # CHILD CLASS
